@@ -1,0 +1,89 @@
+.floating-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.floating-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-top-btn {
+  background-color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #333333;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.floating-top-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.floating-top-btn .arrow {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.floating-top-btn .text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.floating-kakao-btn {
+  background-color: #FEE500; /* Kakao Yellow */
+  color: #000000;
+  text-decoration: none;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.floating-kakao-btn:hover {
+  background-color: #F4DC00;
+}
+
+.floating-kakao-btn .text {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .floating-container {
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .floating-top-btn {
+    padding: 10px 14px;
+  }
+  
+  .floating-kakao-btn {
+    padding: 12px 14px;
+  }
+}
