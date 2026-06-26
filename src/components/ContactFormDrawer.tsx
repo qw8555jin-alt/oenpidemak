@@ -49,7 +49,7 @@ export default function ContactFormDrawer() {
       } else {
         alert("일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
       }
-    } catch (error) {
+    } catch {
       alert("네트워크 오류가 발생했지만 전송이 시도되었습니다.");
       form.reset();
       closeModal();

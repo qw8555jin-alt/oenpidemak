@@ -140,7 +140,7 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>            <div style={{ background: '#fff', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', textAlign: 'left', border: '1px solid #f0f0f0' }}>
               <div style={{ color: 'var(--primary)', fontSize: '1.2rem', marginBottom: '16px', letterSpacing: '2px' }}>★★★★★</div>
               <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.7', marginBottom: '24px', wordBreak: 'keep-all' }}>
-                "요즘 릴스 감성을 진짜 잘 아세요. 저희가 원하는 메시지를 찰떡같이 캐치해서 <strong>조회수 100만 터진 영상</strong> 덕분에 브랜드 인지도도 엄청 올라갔어요!"
+                &quot;요즘 릴스 감성을 진짜 잘 아세요. 저희가 원하는 메시지를 찰떡같이 캐치해서 <strong>조회수 100만 터진 영상</strong> 덕분에 브랜드 인지도도 엄청 올라갔어요!&quot;
               </p>
               <div style={{ borderTop: '1px solid #eee', paddingTop: '16px' }}>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#111', margin: 0 }}>뷰티 브랜드 마케팅 담당자</h4>
@@ -150,7 +150,7 @@ export default function Home() {
             <div style={{ background: '#fff', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', textAlign: 'left', border: '1px solid #f0f0f0' }}>
               <div style={{ color: 'var(--primary)', fontSize: '1.2rem', marginBottom: '16px', letterSpacing: '2px' }}>★★★★★</div>
               <p style={{ fontSize: '1.1rem', color: '#444', lineHeight: '1.7', marginBottom: '24px', wordBreak: 'keep-all' }}>
-                "이전에 다른 곳에 맡겼을 땐 소통이 답답했는데, 원피드마케팅은 <strong>피드백이 정말 빠르고 결과물 퀄리티가 확연히 달라서</strong> 대만족입니다."
+                &quot;매번 기획부터 촬영까지 알아서 척척 해주시니 너무 편합니다. 무엇보다 <strong>영상을 올린 후 문의량이 3배 이상</strong> 늘어서 매출에 직접적인 도움이 되고 있어요.&quot;
               </p>
               <div style={{ borderTop: '1px solid #eee', paddingTop: '16px' }}>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#111', margin: 0 }}>피트니스 센터 원장님</h4>
