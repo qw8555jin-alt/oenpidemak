@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactButton from '../components/ContactButton';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -30,7 +31,8 @@ export default function Home() {
             고객의 반응과 전환을 고려한 숏폼 콘텐츠를 만듭니다.
           </p>
           <div className="fade-in delay-2 hero-buttons" style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-            <ContactButton 
+            <Link 
+              href="/portfolio"
               className="btn" 
               style={{ 
                 display: 'flex',
@@ -47,11 +49,12 @@ export default function Home() {
                 fontWeight: '400',
                 letterSpacing: '1px',
                 textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                textDecoration: 'none'
               }}
             >
-              문의하기
-            </ContactButton>
+              포트폴리오
+            </Link>
           </div>
         </div>
 
@@ -128,6 +131,7 @@ export default function Home() {
 
       </section>
 
+
       {/* Reviews */}
       <section id="reviews" className="section" style={{ backgroundColor: '#1a1d24' }}>
         <div className="container">
@@ -155,6 +159,12 @@ export default function Home() {
                 <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#111', margin: 0 }}>피트니스 센터 원장님</h4>
               </div>
             </div>
+          </div>
+          
+          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+            <Link href="/portfolio" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', padding: '16px 40px', borderRadius: '4px', fontSize: '1.1rem', fontWeight: '700', textDecoration: 'none' }}>
+              포트폴리오 바로가기
+            </Link>
           </div>
         </div>
       </section>
@@ -218,12 +228,12 @@ export default function Home() {
               궁금한 점이 있으신가요? <br className="mobile-br" />카카오톡 채널을 통해 문의해 주시면 <br className="pc-br" />
               담당자가 신속하게 답변해 드립니다.
             </p>
-            <ContactButton className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', backgroundColor: '#FEE500', color: '#000000', borderRadius: '8px', fontWeight: '600', boxShadow: '0 4px 12px rgba(254, 229, 0, 0.4)' }}>
+            <a href="http://pf.kakao.com/_kxdmxfX/chat" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', backgroundColor: '#FEE500', color: '#000000', borderRadius: '8px', fontWeight: '600', boxShadow: '0 4px 12px rgba(254, 229, 0, 0.4)', textDecoration: 'none' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4C7.02944 4 3 7.21071 3 11.1714C3 13.7258 4.70837 16.0357 7.24072 17.3325L6.1558 21.2825C6.07542 21.5753 6.3986 21.8021 6.64333 21.6247L11.3931 18.1724C11.5925 18.1882 11.7951 18.1964 12 18.1964C16.9706 18.1964 21 14.9857 21 11.025C21 7.06429 16.9706 4 12 4Z" />
               </svg>
               카카오톡으로 문의하기
-            </ContactButton>
+            </a>
           </div>
         </div>
       </section>

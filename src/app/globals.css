@@ -617,3 +617,81 @@ a {
   66.66%, 88.88% { background-color: #fff; }
   100% { background-color: transparent; }
 }
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
+}
+
+.portfolio-item {
+  position: relative;
+  aspect-ratio: 9/16;
+  background: linear-gradient(135deg, #1f2229 0%, #111 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    border-radius: 0;
+  }
+}
+
+.portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(255, 122, 0, 0.2);
+  z-index: 10;
+}
+
+.portfolio-item .play-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-item:hover .play-icon {
+  transform: scale(1.1);
+  background: rgba(255, 122, 0, 0.8);
+}
+
+.portfolio-item .views {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}

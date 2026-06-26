@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 원피드마케팅 (Onefeed Marketing)
+
+원피드마케팅 공식 웹사이트 및 포트폴리오 페이지입니다.
+
+## 최근 변경 사항
+
+- **포트폴리오 페이지 구축**: 4가지 카테고리(뷰티, 음식, 인테리어, 피트니스)의 숏폼 영상 12개를 그리드로 배치.
+- **로딩 최적화**: `IntersectionObserver`를 활용하여 화면에 보이는 영상만 로드/재생되도록 지연 로딩(Lazy Loading) 적용.
+- **문의하기 버튼 개선**: 포트폴리오 하단 및 메인 페이지에 '견적 신청하기(폼 연동)' 및 '카카오톡 문의하기(실제 채널 링크 연동)' 버튼 추가.
 
 ## Getting Started
 

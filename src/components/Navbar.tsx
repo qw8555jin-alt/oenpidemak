@@ -8,16 +8,19 @@ export default function Navbar() {
 
   return (
     <nav className="navbar fade-in">
-      <div className="nav-logo">원피드마케팅</div>
+      <a href="/" className="nav-logo">원피드마케팅</a>
       <div className="nav-right">
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
+          <a href="/#about">About</a>
+          <a href="/#services">Services</a>
+          <a href="/#process">Process</a>
         </div>
-        <button onClick={openModal} className="contact-btn border-none cursor-pointer" style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
-          상담 신청
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <a href="/portfolio" className="mobile-portfolio-link" style={{ fontSize: '0.95rem', fontWeight: '700', color: '#fff' }}>포트폴리오</a>
+          <button onClick={openModal} className="contact-btn border-none cursor-pointer" style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
+            상담 신청
+          </button>
+        </div>
       </div>
     </nav>
   );
