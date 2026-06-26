@@ -28,34 +28,18 @@ export default function ContactFormDrawer() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
-    // FormData를 JSON 객체로 변환 (체크박스 중복 선택 처리)
-    const object: Record<string, any> = {};
-    formData.forEach((value, key) => {
-      if (!Reflect.has(object, key)) {
-        object[key] = value;
-        return;
-      }
-      if (!Array.isArray(object[key])) {
-        object[key] = [object[key]];
-      }
-      object[key].push(value);
-    });
-
-    // 배열 형태의 데이터는 쉼표로 연결하여 예쁘게 출력되도록 처리
-    for (const key in object) {
-      if (Array.isArray(object[key])) {
-        object[key] = object[key].join(', ');
-      }
+    // Netlify Forms requires form-name
+    const searchParams = new URLSearchParams();
+    searchParams.append("form-name", "contact");
+    for (const [key, value] of formData.entries()) {
+      searchParams.append(key, value as string);
     }
     
     try {
-      const response = await fetch('https://formsubmit.co/ajax/stu01dio@gmail.com', {
+      const response = await fetch('/', {
         method: 'POST',
-        body: JSON.stringify(object),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: searchParams.toString()
       });
       
       if (response.ok) {
@@ -63,9 +47,7 @@ export default function ContactFormDrawer() {
         form.reset();
         closeModal();
       } else {
-        alert("전송에 성공했습니다. 최초 1회 이메일 인증이 필요할 수 있습니다.");
-        form.reset();
-        closeModal();
+        alert("일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
       }
     } catch (error) {
       alert("네트워크 오류가 발생했지만 전송이 시도되었습니다.");
@@ -100,7 +82,8 @@ export default function ContactFormDrawer() {
         </div>
 
         <div className="drawer-body">
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form name="contact" data-netlify="true" onSubmit={handleSubmit} className="contact-form">
+            <input type="hidden" name="form-name" value="contact" />
             
             <div className="form-group">
               <label>1. 업체명</label>
