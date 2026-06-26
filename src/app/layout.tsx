@@ -24,22 +24,6 @@ export default function RootLayout({
           
           <main>{children}</main>
 
-          {/* Netlify Form Hidden Dummy for Build Parser */}
-          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-            <input type="text" name="업체명" />
-            <input type="text" name="연락처_이메일" />
-            <select name="업종"></select>
-            <input type="checkbox" name="필요한_서비스" />
-            <select name="월_제작_희망_수량"></select>
-            <input type="checkbox" name="운영_중인_채널" />
-            <input type="checkbox" name="계정_링크_없음" />
-            <input type="text" name="계정_링크" />
-            <input type="checkbox" name="제작_목적" />
-            <select name="예상_예산"></select>
-            <textarea name="문의_내용"></textarea>
-            <input type="checkbox" name="개인정보_동의" />
-          </form>
-
           <footer style={{ textAlign: 'center', padding: '60px 20px', borderTop: '1px solid var(--card-border)' }}>
             <div className="nav-logo" style={{ marginBottom: '24px' }}>원피드마케팅</div>
             <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.8', marginBottom: '24px' }}>
