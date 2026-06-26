@@ -133,8 +133,7 @@ export default function Home() {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <span style={{ display: 'block', color: 'var(--primary)', fontWeight: '700', fontSize: '1.1rem', letterSpacing: '1px', marginBottom: '12px' }}>Our Partners</span>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#ffffff', marginBottom: '32px', wordBreak: 'keep-all' }}>확실한 결과로 증명합니다.</h2>
-            <a href="#contact" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '12px 32px', borderRadius: '4px', fontSize: '1.05rem', fontWeight: '700' }}>포트폴리오</a>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#ffffff', margin: '0', wordBreak: 'keep-all' }}>확실한 결과로 증명합니다.</h2>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>            <div style={{ background: '#fff', padding: '32px 24px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', textAlign: 'left', border: '1px solid #f0f0f0' }}>
