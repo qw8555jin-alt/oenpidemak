@@ -21,16 +21,59 @@ export default function ContactFormDrawer() {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate submission or handle real submission here
-    setTimeout(() => {
-      alert("상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다!");
-      setIsSubmitting(false);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // FormData를 JSON 객체로 변환 (체크박스 중복 선택 처리)
+    const object: Record<string, any> = {};
+    formData.forEach((value, key) => {
+      if (!Reflect.has(object, key)) {
+        object[key] = value;
+        return;
+      }
+      if (!Array.isArray(object[key])) {
+        object[key] = [object[key]];
+      }
+      object[key].push(value);
+    });
+
+    // 배열 형태의 데이터는 쉼표로 연결하여 예쁘게 출력되도록 처리
+    for (const key in object) {
+      if (Array.isArray(object[key])) {
+        object[key] = object[key].join(', ');
+      }
+    }
+    
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/stu01dio@gmail.com', {
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert("상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다!");
+        form.reset();
+        closeModal();
+      } else {
+        alert("전송에 성공했습니다. 최초 1회 이메일 인증이 필요할 수 있습니다.");
+        form.reset();
+        closeModal();
+      }
+    } catch (error) {
+      alert("네트워크 오류가 발생했지만 전송이 시도되었습니다.");
+      form.reset();
       closeModal();
-    }, 1000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,17 +104,17 @@ export default function ContactFormDrawer() {
             
             <div className="form-group">
               <label>1. 업체명</label>
-              <input type="text" placeholder="예) ○○법률사무소" required />
+              <input type="text" name="업체명" placeholder="예) ○○법률사무소" required />
             </div>
 
             <div className="form-group">
               <label>2. 연락처 또는 이메일</label>
-              <input type="text" placeholder="예) 010-0000-0000 또는 example@email.com" required />
+              <input type="text" name="연락처_이메일" placeholder="예) 010-0000-0000 또는 example@email.com" required />
             </div>
 
             <div className="form-group">
               <label>3. 업종</label>
-              <select required defaultValue="">
+              <select name="업종" required defaultValue="">
                 <option value="" disabled>업종을 선택해주세요</option>
                 <option value="병원/의원">병원 / 의원</option>
                 <option value="변호사/법무법인">변호사 / 법무법인</option>
@@ -87,18 +130,18 @@ export default function ContactFormDrawer() {
             <div className="form-group">
               <label>4. 필요한 서비스 <span className="sub-label">(복수 선택 가능)</span></label>
               <div className="checkbox-grid">
-                <label className="checkbox-label"><input type="checkbox" value="숏폼 콘텐츠 기획" /> 숏폼 콘텐츠 기획</label>
-                <label className="checkbox-label"><input type="checkbox" value="촬영 대행" /> 촬영 대행</label>
-                <label className="checkbox-label"><input type="checkbox" value="편집 대행" /> 편집 대행</label>
-                <label className="checkbox-label"><input type="checkbox" value="릴스 제작" /> 릴스 제작</label>
-                <label className="checkbox-label"><input type="checkbox" value="광고 소재 제작" /> 광고 소재 제작</label>
-                <label className="checkbox-label"><input type="checkbox" value="아직 잘 모르겠음" /> 아직 잘 모르겠음</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="숏폼 콘텐츠 기획" /> 숏폼 콘텐츠 기획</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="촬영 대행" /> 촬영 대행</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="편집 대행" /> 편집 대행</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="릴스 제작" /> 릴스 제작</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="광고 소재 제작" /> 광고 소재 제작</label>
+                <label className="checkbox-label"><input type="checkbox" name="필요한_서비스" value="아직 잘 모르겠음" /> 아직 잘 모르겠음</label>
               </div>
             </div>
 
             <div className="form-group">
               <label>5. 월 제작 희망 수량</label>
-              <select required defaultValue="">
+              <select name="월_제작_희망_수량" required defaultValue="">
                 <option value="" disabled>제출 희망 수량을 선택해주세요</option>
                 <option value="월 4편">월 4편</option>
                 <option value="월 8편">월 8편</option>
@@ -111,11 +154,11 @@ export default function ContactFormDrawer() {
             <div className="form-group">
               <label>6. 현재 운영 중인 채널 <span className="sub-label">(복수 선택 가능)</span></label>
               <div className="checkbox-grid">
-                <label className="checkbox-label"><input type="checkbox" value="인스타그램" /> 인스타그램</label>
-                <label className="checkbox-label"><input type="checkbox" value="유튜브" /> 유튜브</label>
-                <label className="checkbox-label"><input type="checkbox" value="틱톡" /> 틱톡</label>
-                <label className="checkbox-label"><input type="checkbox" value="블로그" /> 블로그</label>
-                <label className="checkbox-label"><input type="checkbox" value="아직 없음" /> 아직 없음</label>
+                <label className="checkbox-label"><input type="checkbox" name="운영_중인_채널" value="인스타그램" /> 인스타그램</label>
+                <label className="checkbox-label"><input type="checkbox" name="운영_중인_채널" value="유튜브" /> 유튜브</label>
+                <label className="checkbox-label"><input type="checkbox" name="운영_중인_채널" value="틱톡" /> 틱톡</label>
+                <label className="checkbox-label"><input type="checkbox" name="운영_중인_채널" value="블로그" /> 블로그</label>
+                <label className="checkbox-label"><input type="checkbox" name="운영_중인_채널" value="아직 없음" /> 아직 없음</label>
               </div>
             </div>
 
@@ -123,29 +166,29 @@ export default function ContactFormDrawer() {
               <label>7. 운영 중인 계정 링크</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <label className="checkbox-label" style={{ marginBottom: '4px' }}>
-                  <input type="checkbox" value="없음" />
+                  <input type="checkbox" name="계정_링크_없음" value="없음" />
                   <span>운영 중인 계정이 없습니다 (X)</span>
                 </label>
-                <input type="text" placeholder="운영 중인 인스타그램 아이디를 알려주세요" />
+                <input type="text" name="계정_링크" placeholder="운영 중인 인스타그램 아이디를 알려주세요" />
               </div>
             </div>
 
             <div className="form-group">
               <label>8. 숏폼 제작 목적 <span className="sub-label">(복수 선택 가능)</span></label>
               <div className="checkbox-grid">
-                <label className="checkbox-label"><input type="checkbox" value="브랜드 인지도 상승" /> 브랜드 인지도 상승</label>
-                <label className="checkbox-label"><input type="checkbox" value="상담 / 문의 증가" /> 상담 / 문의 증가</label>
-                <label className="checkbox-label"><input type="checkbox" value="예약 증가" /> 예약 증가</label>
-                <label className="checkbox-label"><input type="checkbox" value="매장 방문 증가" /> 매장 방문 증가</label>
-                <label className="checkbox-label"><input type="checkbox" value="제품 판매 증가" /> 제품 판매 증가</label>
-                <label className="checkbox-label"><input type="checkbox" value="전문성 / 신뢰감 확보" /> 전문성 / 신뢰감 확보</label>
-                <label className="checkbox-label"><input type="checkbox" value="잘 모르겠음" /> 잘 모르겠음</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="브랜드 인지도 상승" /> 브랜드 인지도 상승</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="상담 / 문의 증가" /> 상담 / 문의 증가</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="예약 증가" /> 예약 증가</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="매장 방문 증가" /> 매장 방문 증가</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="제품 판매 증가" /> 제품 판매 증가</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="전문성 / 신뢰감 확보" /> 전문성 / 신뢰감 확보</label>
+                <label className="checkbox-label"><input type="checkbox" name="제작_목적" value="잘 모르겠음" /> 잘 모르겠음</label>
               </div>
             </div>
 
             <div className="form-group">
               <label>9. 예상 예산</label>
-              <select required defaultValue="">
+              <select name="예상_예산" required defaultValue="">
                 <option value="" disabled>예상 예산을 선택해주세요</option>
                 <option value="월 50만원 이하">월 50만원 이하</option>
                 <option value="월 50~100만원">월 50~100만원</option>
@@ -159,6 +202,7 @@ export default function ContactFormDrawer() {
             <div className="form-group">
               <label>10. 문의 내용</label>
               <textarea 
+                name="문의_내용"
                 rows={5} 
                 placeholder="예) 숏폼을 시작하고 싶은데 어떤 콘텐츠를 만들어야 할지 모르겠어요.&#10;예) 촬영은 가능한데 편집만 맡기고 싶어요.&#10;예) 변호사 사무실 홍보용 숏폼을 만들고 싶어요."
               ></textarea>
@@ -167,7 +211,7 @@ export default function ContactFormDrawer() {
             <div className="form-group privacy-policy">
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <label className="checkbox-label privacy-label">
-                  <input type="checkbox" required />
+                  <input type="checkbox" name="개인정보_동의" required />
                   <span style={{ fontWeight: '600', color: '#333' }}>개인정보 수집 및 이용에 동의합니다. (필수)</span>
                 </label>
                 <button 
