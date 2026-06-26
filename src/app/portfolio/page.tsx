@@ -62,9 +62,6 @@ export default function PortfolioPage() {
                     src={item.src} 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
-                  <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.5)', padding: '4px 8px', borderRadius: '4px', color: '#fff', fontSize: '0.75rem', fontWeight: '600', backdropFilter: 'blur(4px)' }}>
-                    {section.category.split(' ')[0]}
-                  </div>
                   
                   <div style={{ position: 'absolute', bottom: '0', left: '0', right: '0', padding: '12px', background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)', display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-start' }}>
                     <div style={{ color: '#aaa', fontSize: '0.85rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' }}>
