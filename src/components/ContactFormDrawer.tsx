@@ -43,9 +43,10 @@ export default function ContactFormDrawer() {
       });
       
       if (response.ok) {
-        alert("상담 신청이 완료되었습니다. 빠르게 연락드리겠습니다!");
+        alert("상담 신청이 완료되었습니다. 카카오톡 상담 채널로 연결됩니다!");
         form.reset();
         closeModal();
+        window.location.href = "http://pf.kakao.com/_kxdmxfX/chat";
       } else {
         alert("일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
       }
