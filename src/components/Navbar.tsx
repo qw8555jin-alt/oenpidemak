@@ -2,9 +2,15 @@
 
 import React from 'react';
 import { useContactModal } from '../context/ContactModalContext';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const { openModal } = useContactModal();
+  const pathname = usePathname();
+
+  if (pathname?.startsWith('/proposal')) {
+    return null;
+  }
 
   return (
     <nav className="navbar fade-in">
@@ -15,8 +21,9 @@ export default function Navbar() {
           <a href="/#services">Services</a>
           <a href="/#process">Process</a>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <a href="/portfolio" className="mobile-portfolio-link" style={{ fontSize: '0.95rem', fontWeight: '700', color: '#fff' }}>포트폴리오</a>
+        <div className="mobile-nav-actions">
+          <a href="/proposal" className="mobile-nav-link">회사 소개서</a>
+          <a href="/portfolio" className="mobile-nav-link">포트폴리오</a>
           <button onClick={openModal} className="contact-btn border-none cursor-pointer" style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}>
             상담 신청
           </button>

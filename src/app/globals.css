@@ -216,6 +216,20 @@ a {
   box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
 }
 
+.mobile-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-nav-link {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -530,6 +544,11 @@ a {
   
   .navbar { padding: 0 20px; }
   .nav-links { display: none; }
+  
+  .nav-logo { font-size: 1.1rem; }
+  .mobile-nav-actions { gap: 10px; }
+  .mobile-nav-link { font-size: 0.85rem; }
+  .contact-btn { padding: 8px 16px; font-size: 0.85rem; }
 }
 
 /* Hero Infinite Slider */

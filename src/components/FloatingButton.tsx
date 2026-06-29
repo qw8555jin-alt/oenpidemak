@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import './FloatingButton.css';
 
 export default function FloatingButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -25,6 +27,10 @@ export default function FloatingButton() {
       behavior: "smooth"
     });
   };
+
+  if (pathname?.startsWith('/proposal')) {
+    return null;
+  }
 
   return (
     <div className={`floating-container ${isVisible ? 'visible' : ''}`}>

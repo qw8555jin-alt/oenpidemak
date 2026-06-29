@@ -89,6 +89,31 @@ export default function Home() {
               숏폼의 시장은 거대합니다
             </p>
           </div>
+
+          <div style={{ marginTop: '50px', display: 'flex', justifyContent: 'center' }}>
+            <Link 
+              href="/proposal"
+              className="btn" 
+              style={{ 
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '16px 40px',
+                border: '1px solid var(--primary)', 
+                borderRadius: '8px', 
+                backgroundColor: 'var(--primary)', 
+                color: '#ffffff',
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                letterSpacing: '1px',
+                boxShadow: '0 8px 24px rgba(255, 122, 0, 0.2)',
+                transition: 'all 0.3s ease',
+                textDecoration: 'none'
+              }}
+            >
+              회사 소개서 보기
+            </Link>
+          </div>
         </div>
         
         <div className="panel" style={{ padding: '60px 40px', textAlign: 'center', marginTop: '20px' }}>
