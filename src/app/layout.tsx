@@ -4,6 +4,7 @@ import './globals.css'
 import { ContactModalProvider } from '../context/ContactModalContext';
 import Navbar from '../components/Navbar';
 import FloatingButton from '../components/FloatingButton';
+import MetaPixel from '../components/MetaPixel';
 
 export const metadata: Metadata = {
   title: '원피드마케팅 - 시선을 사로잡는 숏폼 대행사',
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
+        <MetaPixel />
         <ContactModalProvider>
           <Navbar />
           
