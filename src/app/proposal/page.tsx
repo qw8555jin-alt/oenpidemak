@@ -297,11 +297,7 @@ export default function ProposalPresentation() {
                     </div>
                   </div>
 
-                  {/* STEP 06 */}
-                  <div>
-                    <div className="process-step-label">STEP 06</div>
-                    <div className="process-step-title">퍼포먼스 집행 및 결과 보고</div>
-                  </div>
+
                 </div>
               </div>
             </div>

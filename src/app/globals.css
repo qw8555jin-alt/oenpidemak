@@ -14,6 +14,25 @@
   --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+.section-dark {
+  background-color: #0a0a0a;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --secondary: #111111;
+  --card-bg: #1a1a1a;
+  --card-border: #333333;
+  --text-muted: #aaaaaa;
+  --text-light: #777777;
+}
+
+.section-dark .pricing-card {
+  --card-bg: #ffffff;
+  --foreground: #111111;
+  --text-muted: #555555;
+  --text-light: #444444;
+  --card-border: #e5e5e5;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -37,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #111111;
+  color: var(--foreground);
   word-break: keep-all;
 }
 
@@ -286,7 +305,7 @@ a {
 
 .pricing-card {
   padding: 40px 32px;
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -366,14 +385,14 @@ a {
 
 /* Benefit Cards */
 .benefit-card {
-  background: #ffffff;
+  background: var(--card-bg);
   padding: 18px 24px;
   border-radius: 12px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #333333;
-  border: 1px solid #eaeaea;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  color: var(--foreground);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   display: flex;
   align-items: center;
@@ -413,10 +432,10 @@ a {
 .process-step {
   text-align: left;
   padding: 40px 32px;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border: 1px solid var(--card-border);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -430,7 +449,7 @@ a {
   font-size: 2rem;
   margin-bottom: 24px;
   color: var(--primary);
-  background: #fff5f5;
+  background: rgba(255, 122, 0, 0.1);
   width: 64px;
   height: 64px;
   display: flex;
