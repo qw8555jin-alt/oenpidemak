@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import ContactButton from '../components/ContactButton';
 import Link from 'next/link';
