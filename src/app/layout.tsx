@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+import { Suspense } from 'react';
 import { ContactModalProvider } from '../context/ContactModalContext';
 import Navbar from '../components/Navbar';
 import FloatingButton from '../components/FloatingButton';
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <MetaPixel />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         <ContactModalProvider>
           <Navbar />
           
