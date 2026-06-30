@@ -263,8 +263,12 @@ export default function Home() {
             <a href="http://pf.kakao.com/_kxdmxfX/chat" target="_blank" rel="noopener noreferrer" className="btn-primary" 
                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', backgroundColor: '#FEE500', color: '#000000', borderRadius: '8px', fontWeight: '600', boxShadow: '0 4px 12px rgba(254, 229, 0, 0.4)', textDecoration: 'none' }}
                onClick={() => {
+                 console.log("카카오톡 버튼 클릭됨!");
                  if (typeof window !== 'undefined' && (window as any).fbq) {
+                   console.log("Meta Pixel 'Contact' 이벤트 전송 중...");
                    (window as any).fbq('track', 'Contact');
+                 } else {
+                   console.warn("Meta Pixel(fbq)이 로드되지 않았습니다. 광고 차단 프로그램이 켜져 있는지 확인하세요.");
                  }
                }}
             >
