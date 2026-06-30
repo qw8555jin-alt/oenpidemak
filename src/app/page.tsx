@@ -258,9 +258,13 @@ export default function Home() {
           
           <div className="panel" style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 40px', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--foreground)' }}>즉각적인 비즈니스 성장 경험하기</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '32px', lineHeight: '1.6' }}>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: '1.6' }}>
               브랜드의 아이덴티티를 해치지 않으면서도 <br className="mobile-br"/>압도적인 퍼포먼스를 약속합니다.<br/>
               지금 바로 카카오톡 채널을 통해 문의해 주세요.
+            </p>
+            <p style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--primary)', marginBottom: '24px', wordBreak: 'keep-all', lineHeight: '1.6' }}>
+              현재까지 TO마감 상태였으나<br />
+              확장으로 인해 단 <strong>2분</strong>의 클라이언트만 추가로 모집합니다.
             </p>
             <a href="http://pf.kakao.com/_kxdmxfX/chat" target="_blank" rel="noopener noreferrer" className="btn-primary" 
                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', backgroundColor: '#FEE500', color: '#000000', borderRadius: '8px', fontWeight: '600', boxShadow: '0 4px 12px rgba(254, 229, 0, 0.4)', textDecoration: 'none' }}

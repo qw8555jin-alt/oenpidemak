@@ -600,6 +600,10 @@ export default function ProposalPresentation() {
           <h2 className="slide-title animate-up">광고주의 매출을 숏폼으로 <br/><span style={{ color: 'var(--primary)' }}>책임집니다.</span></h2>
           
           <div className="glass-panel animate-up delay-100" style={{ maxWidth: '600px', margin: '60px auto 0' }}>
+            <p style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--primary)', marginBottom: '24px', wordBreak: 'keep-all', lineHeight: '1.6' }}>
+              현재까지 TO마감 상태였으나<br />
+              확장으로 인해 단 <strong>2분</strong>의 클라이언트만 추가로 모집합니다.
+            </p>
             <a href="http://pf.kakao.com/_kxdmxfX/chat" target="_blank" rel="noopener noreferrer" 
                className="btn-primary" 
                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 40px', fontSize: '1.1rem', backgroundColor: '#FEE500', color: '#000000', borderRadius: '8px', fontWeight: '600', boxShadow: '0 4px 12px rgba(254, 229, 0, 0.4)', textDecoration: 'none' }}
