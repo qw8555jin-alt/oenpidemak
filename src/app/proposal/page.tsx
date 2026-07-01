@@ -331,7 +331,7 @@ export default function ProposalPresentation() {
       {/* Slide 8: Pricing 1 (A, B, 단일건) */}
       <section className="slide" ref={(el) => { slideRefs.current[7] = el; }}>
         <div className="slide-content dark-pricing">
-          <h2 className="slide-title animate-up" style={{ marginBottom: '40px' }}>
+          <h2 className="slide-title animate-up" style={{ marginBottom: '16px' }}>
             Pricing<br/>
             상품 및 가격<br/>
             <span style={{ color: 'var(--primary)', fontSize: '1.4rem', fontWeight: 600, display: 'inline-block', marginTop: '8px' }}>(모델, 촬영 포함 타입)</span>
@@ -483,7 +483,7 @@ export default function ProposalPresentation() {
       {/* Slide 9: Pricing 2 (C, D, E) */}
       <section className="slide" ref={(el) => { slideRefs.current[8] = el; }}>
         <div className="slide-content dark-pricing">
-          <h2 className="slide-title animate-up" style={{ marginBottom: '40px' }}>
+          <h2 className="slide-title animate-up" style={{ marginBottom: '16px' }}>
             Pricing<br/>
             상품 및 가격<br/>
             <span style={{ color: 'var(--primary)', fontSize: '1.4rem', fontWeight: 600, display: 'inline-block', marginTop: '8px' }}>(모델, 촬영 미포함 타입)</span>

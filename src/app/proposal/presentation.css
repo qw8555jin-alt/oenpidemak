@@ -340,7 +340,7 @@
   display: grid;
   grid-template-columns: 140px 1fr 1fr 1fr;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 .pt-header-cell {
   display: flex;
@@ -354,9 +354,9 @@
   align-items: flex-start;
 }
 .pt-type-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: #fff;
 }
 .pt-type-desc {
@@ -370,7 +370,7 @@
   display: grid;
   grid-template-columns: 140px 1fr 1fr 1fr;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  min-height: 48px;
+  min-height: 38px;
 }
 .pt-row-grid:last-child {
   border-bottom: none;
@@ -379,8 +379,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 8px;
-  font-size: 0.95rem;
+  padding: 6px 8px;
+  font-size: 0.9rem;
   color: #fff;
   text-align: center;
 }
@@ -393,14 +393,14 @@
   grid-column: 2 / 5;
   background: #fff;
   border-radius: 40px;
-  margin: 12px 16px;
+  margin: 6px 16px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 12px 24px;
+  padding: 8px 16px;
   color: #000;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .text-cyan { color: #00bcd4 !important; }
@@ -408,14 +408,14 @@
 .pt-strike { text-decoration: line-through; color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-right: 6px; }
 
 .pt-additional-cost {
-  margin-top: 24px;
+  margin-top: 12px;
   border: 1px solid rgba(0, 188, 212, 0.4);
   background: rgba(0, 188, 212, 0.05);
   border-radius: 8px;
-  padding: 16px 24px;
+  padding: 12px 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
 }
 .pt-ac-title {
